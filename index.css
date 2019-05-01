@@ -1,0 +1,86 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(54, 52, 175);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.main{
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px  rgb(173, 169, 169);
+}
+
+.main .question h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.main .question h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#Options {
+    display: flex;
+    flex-direction: column;
+}
+
+#Options button {
+    padding: 10px;
+    margin: 5px;
+}
+
+#Options #submit{
+    background-color: rgb(83, 141, 192);
+    border-color: rgb(83, 141, 192);
+    border-style: none;
+    color: white;
+    font-size: 18px;
+}
+
+#Options #pass{
+    background-color: rgb(235, 117, 6);
+    border-color: rgb(235, 117, 6);
+    border-style: hidden;
+    color: white;
+    font-size: 18px;
+}
+
+#line{
+    background-color: rgba(155, 152, 152, 0.582);
+    height: 2px;
+}
+
+#ansOne{
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(255, 228, 196, 0.644);
+    transition: 0.5s ease-in-out;
+    
+}
+
+#ansOne:hover {
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgb(54, 54, 54);
+    background-color: rgb(205, 225, 255);
+}
+
+#ansOne label{
+    margin: 5px;
+    font-size: 18px;
+    font-style: initial;
+}
+
+
+
