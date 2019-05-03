@@ -73,7 +73,7 @@
 #ansOne:hover {
     border-radius: 10px;
     box-shadow: 0px 0px 2px rgb(54, 54, 54);
-    background-color: rgb(205, 225, 255);
+    background-color: rgb(150, 176, 214);
 }
 
 #ansOne label{
@@ -81,6 +81,8 @@
     font-size: 18px;
     font-style: initial;
 }
+
+
 
 
 

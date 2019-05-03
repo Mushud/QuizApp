@@ -377,10 +377,12 @@ let Questions = [
     var submitBtn = document.getElementById("submit");
     var scores= document.getElementById("score");
     var passBtn = document.getElementById("pass");
-
+    var quesNumber = document.getElementById("number");
 
     let GeneralAnswer;
     let score = 0;
+    let questionNumber = 0;
+    let q;
 
     function checkAnswer(){
         let ansRadio = document.getElementsByName("answer");
@@ -394,16 +396,23 @@ let Questions = [
                    scores.innerHTML =  "Score: " + score;
                    submitBtn.style.backgroundColor = 'green';
                    submitBtn.innerHTML = "Correct";
-                   setTimeout(generateQuestions, 2000);
-
                    
-                   //generateQuestions();
+                   console.log(questionNumber);
+                   if(questionNumber < Questions.length-1){
+                    questionNumber += 1;
+                    setTimeout(generateQuestions, 2000);
+                  }
+                 
+                   
                 }else{
                     console.log("wrong");
                     submitBtn.style.backgroundColor = 'red';
                     submitBtn.innerHTML = "Wrong";
-                    setTimeout(generateQuestions, 2000);
-                    
+                    console.log(questionNumber)
+                    if(questionNumber < Questions.length-1){
+                        questionNumber += 1;
+                        setTimeout(generateQuestions, 2000);
+                      }
                 }
             }  
         }
@@ -411,7 +420,11 @@ let Questions = [
 
     passBtn.addEventListener('click', passQuestion);
     function passQuestion(){
-        generateQuestions();
+        if(questionNumber < Questions.length-1){
+            questionNumber += 1;
+            generateQuestions();
+        }
+       
     }
 
     submitBtn.addEventListener('click', checkAnswer)
@@ -419,13 +432,22 @@ let Questions = [
 
     function generateQuestions(){
 
+        quesNumber.innerHTML = "Question :" + (parseInt(questionNumber) + parseInt(1)) + " of " +Questions.length;
         submitBtn.style.backgroundColor = 'rgb(83, 141, 192)';
         submitBtn.innerHTML = "Submit";
         while(ansDiv.firstChild){
             ansDiv.removeChild(ansDiv.firstChild);
         }
-        let q = shuffle(Questions);
-        let currentQuestion = q[0];
+        let currentQuestion;
+       
+        if(questionNumber == 0){
+            q = shuffle(Questions);
+            currentQuestion = q[0];
+            
+        }else {
+            currentQuestion =q[questionNumber];
+        }
+       
         GeneralAnswer = currentQuestion.correct_answer;
         question.innerHTML = currentQuestion.question;
 
@@ -438,6 +460,7 @@ let Questions = [
             let blackquote = document.createElement("blackquote");
 
             let radioBtn = document.createElement('input');
+            radioBtn.setAttribute('class', 'rad');
             radioBtn.setAttribute('type', 'radio')
             radioBtn.setAttribute('name', 'answer');
             radioBtn.setAttribute('value', shuffledAnswers[i]);
