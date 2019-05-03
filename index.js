@@ -465,6 +465,8 @@ let Questions = [
             radioBtn.setAttribute('name', 'answer');
             radioBtn.setAttribute('value', shuffledAnswers[i]);
 
+         
+
             let answerlabel = document.createElement("label");
             let answerText = document.createTextNode(shuffledAnswers[i].replace("&quot;","\""));
 
@@ -475,7 +477,9 @@ let Questions = [
 
             let ansDivOne = document.createElement('div');
             ansDivOne.setAttribute("id", "ansOne");
+            
             ansDivOne.appendChild(radioBtn);
+         
             ansDivOne.appendChild(blackquote);
         
             ansDiv.appendChild(ansDivOne);
